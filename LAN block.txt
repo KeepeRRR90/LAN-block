@@ -1,0 +1,55 @@
+! === Anti-DNS-Rebinding / LAN Protection for AdGuard Home ===
+! Created by @assistant
+! Safe to use with OpenWRT, no conflict with local admin access
+
+! --- Common Localhost Aliases (safe to block) ---
+||localdomain^
+||localhost^
+||localnet^
+||intranet^
+||internal^
+||private^
+||home.arpa^
+
+! --- Known Rebinding Domains (do not used locally) ---
+||127.0.0.1^
+||::1^
+||self^
+||loopback^
+||ipv4.fiddler^
+||ipv6.fiddler^
+||localtest.me^
+||lancache.net^
+||lan.play^
+||loopback.crt.sh^
+||loopback.fail^
+||loopback.host^
+||loopback.site^
+||localhost.gd^
+||localhost.run^
+||localhost.secure^
+||localhost.works^
+||nipeip.com^
+||nip.io^
+||p.holdenweb.com^
+||ping.ipv6.microsoft.com^
+||rebind.watch^
+||ssl.rebind.watch^
+||test.rebind.watch^
+||test-local-ping.com^
+||testlocal.pw^
+||v4.ident.me^
+||v6.ident.me^
+||whatismyipaddress.com^
+||whoami.akamai.net^
+||whoami.cloudflare^
+||whoami.dynect.net^
+||whoami.easydns.com^
+||whoami.is^
+||whoami.pro^
+||whoami.ultradns.biz^
+||whoami.ultradns.com^
+||whoami.ultradns.net^
+||whoami.ultradns.org^
+||xip.io^
+||xip.name^
