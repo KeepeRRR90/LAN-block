@@ -1,8 +1,7 @@
-! === Anti-DNS-Rebinding / LAN Protection for AdGuard Home ===
-! Created by @assistant
-! Safe to use with OpenWRT, no conflict with local admin access
+! === Оптимизированный блокировщик локальных и rebinding-доменов ===
+! Версия 2.1 (безопасная, с группировкой)
 
-! --- Common Localhost Aliases (safe to block) ---
+! --- Базовые локальные псевдонимы (безопасно блокировать) ---
 ||localdomain^
 ||localhost^
 ||localnet^
@@ -11,45 +10,36 @@
 ||private^
 ||home.arpa^
 
-! --- Known Rebinding Domains (do not used locally) ---
+! --- Стандартные loopback-адреса ---
 ||127.0.0.1^
 ||::1^
 ||self^
 ||loopback^
-||ipv4.fiddler^
-||ipv6.fiddler^
+
+! --- Известные rebinding-домены ---
+||*.fiddler^
 ||localtest.me^
 ||lancache.net^
 ||lan.play^
-||loopback.crt.sh^
-||loopback.fail^
-||loopback.host^
-||loopback.site^
-||localhost.gd^
-||localhost.run^
-||localhost.secure^
-||localhost.works^
+||loopback.*^  ! Все loopback-варианты
+||localhost.*^ ! Все localhost-суффиксы
+
+! --- Динамические DNS для тестирования ---
+||*.nip.io^
+||*.xip.io^
+||xip.name^
 ||nipeip.com^
-||nip.io^
-||p.holdenweb.com^
+||test-local-ping.com^
+||testlocal.pw^
+
+! --- Сервисы определения IP ---
+||v[46].ident.me^
+||whatismyipaddress.com^
+||whoami.*^  ! Все whoami-сервисы
 ||ping.ipv6.microsoft.com^
+||p.holdenweb.com^
+
+! --- Rebinding-мониторинг ---
 ||rebind.watch^
 ||ssl.rebind.watch^
 ||test.rebind.watch^
-||test-local-ping.com^
-||testlocal.pw^
-||v4.ident.me^
-||v6.ident.me^
-||whatismyipaddress.com^
-||whoami.akamai.net^
-||whoami.cloudflare^
-||whoami.dynect.net^
-||whoami.easydns.com^
-||whoami.is^
-||whoami.pro^
-||whoami.ultradns.biz^
-||whoami.ultradns.com^
-||whoami.ultradns.net^
-||whoami.ultradns.org^
-||xip.io^
-||xip.name^
