@@ -5,6 +5,8 @@
 @@||localdomain^$important
 @@||localhost^$important
 @@||home.arpa^$important
+@@||router.local^
+@@||openwrt.lan^
 
 ! --- Loopback и системные адреса ---
 ||127.0.0.1^
