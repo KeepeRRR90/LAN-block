@@ -1,45 +1,37 @@
 ! === Оптимизированный блокировщик локальных и rebinding-доменов ===
 ! Версия 2.1 (безопасная, с группировкой)
 
-! --- Базовые локальные псевдонимы (безопасно блокировать) ---
-||localdomain^
-||localhost^
-||localnet^
-||intranet^
-||internal^
-||private^
-||home.arpa^
+! --- Критически важные исключения ---
+@@||localdomain^$important
+@@||localhost^$important
+@@||home.arpa^$important
 
-! --- Стандартные loopback-адреса ---
+! --- Loopback и системные адреса ---
 ||127.0.0.1^
 ||::1^
 ||self^
 ||loopback^
 
-! --- Известные rebinding-домены ---
+! --- Rebinding-защита (безопасные правила) ---
 ||*.fiddler^
 ||localtest.me^
 ||lancache.net^
 ||lan.play^
-||loopback.*^  ! Все loopback-варианты
-||localhost.*^ ! Все localhost-суффиксы
+||loopback.crt.sh^
+||loopback.host^
 
-! --- Динамические DNS для тестирования ---
+! --- Динамические DNS ---
 ||*.nip.io^
 ||*.xip.io^
 ||xip.name^
 ||nipeip.com^
-||test-local-ping.com^
-||testlocal.pw^
 
 ! --- Сервисы определения IP ---
 ||v[46].ident.me^
 ||whatismyipaddress.com^
-||whoami.*^  ! Все whoami-сервисы
-||ping.ipv6.microsoft.com^
-||p.holdenweb.com^
+||whoami.akamai.net^
+||whoami.cloudflare^
 
-! --- Rebinding-мониторинг ---
+! --- Мониторинг rebinding ---
 ||rebind.watch^
 ||ssl.rebind.watch^
-||test.rebind.watch^
